@@ -33,6 +33,7 @@ const QuoteList = (props) => {
   const sortedQuotes = sortQuotes(props.quotes, isSortingAscending);
 
   const changeSortingHandler = () => {
+    console.log("second " + isSortingAscending);
     history.push({
       pathname: location.pathname,
       search: `?sort=${isSortingAscending ? "desc" : "asc"}`,
