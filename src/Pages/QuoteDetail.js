@@ -1,4 +1,4 @@
-import { useParams, Route, Link } from "react-router-dom";
+import { useParams, Route, Link, useRouteMatch } from "react-router-dom";
 import Comments from "../components/comments/Comments";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 
@@ -8,7 +8,11 @@ const DUMMY_QUOTES = [
 ];
 
 const QuoteDetail = () => {
+  const match = useRouteMatch();
   const params = useParams();
+ 
+  // includes path path="/quotes/:quoteId" , as specified in Route in App.js
+  console.log(match );
 
   const quote = DUMMY_QUOTES.find((quote) => quote.id === params.quoteId);
 
@@ -22,15 +26,16 @@ const QuoteDetail = () => {
     <section>
       <HighlightedQuote text={quote.text} author={quote.author} />
       {/* this is a trick how to hide Load Comments link when a specific comment is loaded */}
-      <Route path={`/quotes/${params.quoteId}`} exact>
+      <Route path={match.path} exact>
         <div className="centered">
-          <Link className="btn--flat" to={`/quotes/${params.quoteId}/comments`}>
+          <Link className="btn--flat" to={`${match.url}/comments`}>
             Load Comments
           </Link>
         </div>
       </Route>
       {/* can be used also a path path="/quotes/:quoteId/comments" */}
-      <Route path={`/quotes/${params.quoteId}/comments`}>
+      {/* <Route path={`/quotes/${params.quoteId}/comments`}>  alternative with match is below*/}
+      <Route path={`${match.path}/comments`}>
         <Comments />
       </Route>
     </section>

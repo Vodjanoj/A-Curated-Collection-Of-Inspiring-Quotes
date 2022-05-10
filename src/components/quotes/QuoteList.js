@@ -24,19 +24,25 @@ const QuoteList = (props) => {
   // and because I'm using URLSearchParams, therefore queryParams object will now have a sort key, which will hold this asc value.
   // And that's simply a more convenient way of extracting data from the query parameters.
 
-  
-
   const queryParams = new URLSearchParams(location.search);
 
   const isSortingAscending = queryParams.get("sort") === "asc";
 
-  const sortedQuotes = sortQuotes(props.quotes, isSortingAscending )
+  console.log("first " + isSortingAscending);
+
+  const sortedQuotes = sortQuotes(props.quotes, isSortingAscending);
 
   const changeSortingHandler = () => {
-    history.push("/quotes?sort=" + (isSortingAscending ? "desc" : "asc"));
+    history.push({
+      pathname: location.pathname,
+      search: `?sort=${isSortingAscending ? "desc" : "asc"}`,
+    });
+     
+    // the same, but above is more readable
+    // history.push(
+    //   `${location.pathname}?sort=${isSortingAscending ? "desc" : "asc"}`
+    // );
   };
-
-  console.log(location);
 
   return (
     <Fragment>
