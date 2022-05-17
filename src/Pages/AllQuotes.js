@@ -5,16 +5,15 @@ import NoQuotesFound from "../components/quotes/NoQuotesFound";
 import useHttp from "../hooks/use-http";
 import { getAllQuotes } from "../lib/api";
 
-
 const AllQuotes = () => {
   // true  controls that we start in loading state and that therefore a status is pending right from the start.
+
   const {
     sendRequest,
     status,
     data: loadedQuotes,
     error,
   } = useHttp(getAllQuotes, true);
-
   useEffect(() => {
     sendRequest();
   }, [sendRequest]);

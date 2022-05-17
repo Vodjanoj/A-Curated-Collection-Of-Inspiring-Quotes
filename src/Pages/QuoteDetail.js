@@ -7,6 +7,8 @@ import useHttp from "../hooks/use-http";
 import { getSingleQuote } from "../lib/api";
 
 const QuoteDetail = () => {
+  // It's kind of similar to use location, but it has more information about the currently loaded route,
+  // Not just about the URL but about some internally managed data React Router is aware of.
   // includes path path="/quotes/:quoteId" , as specified in Route in App.js
   const match = useRouteMatch();
   const params = useParams();
