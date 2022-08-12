@@ -14,6 +14,7 @@ const AllQuotes = () => {
     data: loadedQuotes,
     error,
   } = useHttp(getAllQuotes, true);
+  
   useEffect(() => {
     sendRequest();
   }, [sendRequest]);
