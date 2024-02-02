@@ -18,7 +18,6 @@ Welcome to the Great Quotes App! This project is designed to be a platform for c
 
 - React
 - React Router
-- React Context
 - CSS-Modules
 - Firebase<br />
   
