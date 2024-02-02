@@ -10,8 +10,6 @@ import CommentsList from "./CommentsList";
 
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
-  // to get quoteId in this comments component I can use use params, and here, that should be fine
-  // because I know that I will always only use this component in a place where the URL contains my parameter.
   const params = useParams();
   const { quoteId } = params;
 
