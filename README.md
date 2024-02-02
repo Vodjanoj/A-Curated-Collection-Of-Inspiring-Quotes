@@ -27,3 +27,6 @@ Welcome to the Great Quotes App! This project is designed to be a platform for c
 1. Clone this repository
 2. Install dependencies using `npm install`
 3. Run the application using `npm start`<br />
+   
+## Deployed on Vercel
+https://routing-fetch.web.app 
