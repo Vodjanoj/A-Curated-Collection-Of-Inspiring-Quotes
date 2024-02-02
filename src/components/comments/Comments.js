@@ -58,8 +58,6 @@ const Comments = () => {
           Add a Comment
         </button>
       )}
-      {/* onAddedComment prop should point at a function which is executed when a comment was added
-      The quote ID prop should forward the quote ID. */}
       {isAddingComment && (
         <NewCommentForm
           quoteId={quoteId}

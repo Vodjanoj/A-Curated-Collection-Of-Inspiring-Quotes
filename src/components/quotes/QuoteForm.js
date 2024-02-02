@@ -1,8 +1,5 @@
 import { useRef, useState, Fragment } from "react";
-// Prompt will automatically watch if we navigate away. And if then a certain condition is met,
-// it will show a warning before it allows us to leave.
 import { Prompt } from "react-router-dom";
-
 import Card from "../UI/Card";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import classes from "./QuoteForm.module.css";
@@ -17,9 +14,6 @@ const QuoteForm = (props) => {
 
     const enteredAuthor = authorInputRef.current.value;
     const enteredText = textInputRef.current.value;
-
-    // optional: Could validate here
-
     props.onAddQuote({ author: enteredAuthor, text: enteredText });
   }
 

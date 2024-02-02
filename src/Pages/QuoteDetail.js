@@ -47,7 +47,6 @@ const QuoteDetail = () => {
   return (
     <section>
       <HighlightedQuote text={loadedQuote.text} author={loadedQuote.author} />
-      {/* this is a trick how to hide Load Comments link when a specific comment is loaded */}
       <Route path={match.path} exact>
         <div className="centered">
           <Link className="btn--flat" to={`${match.url}/comments`}>
@@ -55,8 +54,6 @@ const QuoteDetail = () => {
           </Link>
         </div>
       </Route>
-      {/* can be used also a path path="/quotes/:quoteId/comments" */}
-      {/* <Route path={`/quotes/${params.quoteId}/comments`}>  alternative with match is below*/}
       <Route path={`${match.path}/comments`}>
         <Comments />
       </Route>

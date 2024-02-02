@@ -15,9 +15,6 @@ const NewCommentForm = (props) => {
 
   useEffect(() => {
     if (status === "completed" && !error) {
-      // then in here, I wanna call a function which I expect to get through props
-      // to notify the parent component, with is comments component, about the fact
-      // that we're done adding a new comment, and that should re-fetch comments component therefore.
       onAddedComment();
     }
   }, [status, error, onAddedComment]);
